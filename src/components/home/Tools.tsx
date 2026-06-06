@@ -37,9 +37,10 @@ const appLogos = [
   { name: "Arduino", src: "/image/tools/apps/arduino-svgrepo-com.svg" },
 ];
 
-const repeatLogos = <T,>(items: readonly T[]) => [...items];
+const repeatLogos = <T,>(items: readonly T[]) => [...items, ...items];
 
 type ToolsProps = {
+  isActive: boolean;
   content: {
     eyebrow: string;
     title: string;
@@ -52,7 +53,7 @@ type ToolsProps = {
   };
 };
 
-export default function Tools({ content }: ToolsProps) {
+export default function Tools({ content, isActive }: ToolsProps) {
   const languageGroup = content.groups[0];
   const frameworkGroup = content.groups[1];
   const appGroup = content.groups[2];
@@ -65,7 +66,11 @@ export default function Tools({ content }: ToolsProps) {
     content.laneTitles?.secondary ?? `${appGroup?.title ?? ""} & Tools`.trim();
 
   return (
-    <section id="tools" className={`${styles.section} ${styles.tools}`}>
+    <section
+      id="tools"
+      className={`${styles.section} ${styles.tools}`}
+      data-marquee-active={isActive ? "true" : undefined}
+    >
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <div>

@@ -6,6 +6,7 @@ type ProjectPreviewStyle = CSSProperties & {
 };
 
 type ProjectsProps = {
+  isActive: boolean;
   content: {
     eyebrow: string;
     title: string;
@@ -20,11 +21,15 @@ type ProjectsProps = {
   };
 };
 
-export default function Projects({ content }: ProjectsProps) {
+export default function Projects({ content, isActive }: ProjectsProps) {
   const projectLoop = [...content.items, ...content.items];
 
   return (
-    <section id="projects" className={`${styles.section} ${styles.projects}`}>
+    <section
+      id="projects"
+      className={`${styles.section} ${styles.projects}`}
+      data-marquee-active={isActive ? "true" : undefined}
+    >
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <div>

@@ -1,6 +1,7 @@
 import styles from "./Home.module.scss";
 
 type AboutProps = {
+  isActive: boolean;
   content: {
     eyebrow: string;
     title: string;
@@ -8,9 +9,13 @@ type AboutProps = {
   };
 };
 
-export default function About({ content }: AboutProps) {
+export default function About({ content, isActive }: AboutProps) {
   return (
-    <section id="about" className={`${styles.section} ${styles.sectionLight}`}>
+    <section
+      id="about"
+      className={`${styles.section} ${styles.sectionLight}`}
+      data-animation-active={isActive ? "true" : undefined}
+    >
       <div className={styles.sectionGrid}>
         <div>
           <p className={styles.eyebrow}>{content.eyebrow}</p>

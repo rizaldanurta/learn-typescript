@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Home.module.scss";
 
 type NavbarProps = {
@@ -13,6 +13,8 @@ type NavbarProps = {
     tools: string;
     contact: string;
   };
+  activeSection: SectionId;
+  onActiveSectionChange: (section: SectionId) => void;
 };
 
 const links = [
@@ -26,9 +28,17 @@ const links = [
 
 type SectionId = (typeof links)[number][1] | "home";
 
-export default function Navbar({ nav }: NavbarProps) {
+export default function Navbar({
+  nav,
+  activeSection,
+  onActiveSectionChange,
+}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<SectionId>("home");
+  const activeSectionRef = useRef<SectionId>(activeSection);
+
+  useEffect(() => {
+    activeSectionRef.current = activeSection;
+  }, [activeSection]);
 
   useEffect(() => {
     const sectionIds: SectionId[] = ["home", ...links.map(([, href]) => href)];
@@ -48,7 +58,10 @@ export default function Navbar({ nav }: NavbarProps) {
       let currentSection: SectionId = "home";
 
       if (isAtPageBottom) {
-        setActiveSection("contact");
+        if (activeSectionRef.current !== "contact") {
+          activeSectionRef.current = "contact";
+          onActiveSectionChange("contact");
+        }
         return;
       }
 
@@ -80,7 +93,10 @@ export default function Navbar({ nav }: NavbarProps) {
         });
       }
 
-      setActiveSection(currentSection);
+      if (activeSectionRef.current !== currentSection) {
+        activeSectionRef.current = currentSection;
+        onActiveSectionChange(currentSection);
+      }
     };
 
     const handleScroll = () => {
@@ -97,7 +113,7 @@ export default function Navbar({ nav }: NavbarProps) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, []);
+  }, [onActiveSectionChange]);
 
   return (
     <header className={styles.siteHeader}>

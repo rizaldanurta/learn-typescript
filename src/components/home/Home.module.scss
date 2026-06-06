@@ -83,7 +83,7 @@ $white: #ffffff;
   position: relative;
   z-index: 1;
   pointer-events: auto;
-  backdrop-filter: blur(10px);
+  backdrop-filter: none;
   box-shadow: 0 18px 54px rgba($black, 0.18);
 
   a {
@@ -294,7 +294,7 @@ $white: #ffffff;
   border-radius: 26px;
   background: rgba($white, 0.08);
   padding: 20px;
-  backdrop-filter: blur(18px);
+  backdrop-filter: none;
 
   span {
     color: $white;
@@ -326,7 +326,7 @@ $white: #ffffff;
   background: color-mix(in srgb, var(--page-bg) 84%, transparent);
   color: var(--page-fg);
   cursor: pointer;
-  backdrop-filter: blur(18px);
+  backdrop-filter: none;
   box-shadow: 0 12px 34px rgba($black, 0.26);
   transition: border-color 180ms ease, transform 180ms ease;
 
@@ -357,7 +357,7 @@ $white: #ffffff;
   justify-content: flex-end;
   padding: 22px;
   background: rgba($black, 0.36);
-  backdrop-filter: blur(10px);
+  backdrop-filter: none;
 }
 
 .preferenceModal {
@@ -496,7 +496,7 @@ $white: #ffffff;
     stroke: rgba($black, 0.44);
     stroke-linecap: round;
     stroke-linejoin: round;
-    filter: drop-shadow(0 24px 32px rgba($black, 0.08));
+    filter: none;
   }
 }
 
@@ -504,6 +504,7 @@ $white: #ffffff;
   stroke-width: 5.2;
   opacity: 0.28;
   animation: aboutCircleBreathe 5.8s ease-in-out infinite;
+  animation-play-state: paused;
   transform-origin: 180px 116px;
 }
 
@@ -511,6 +512,7 @@ $white: #ffffff;
 .aboutCodeMark,
 .aboutBusinessMark {
   animation: aboutMarkFloat 5.8s ease-in-out infinite;
+  animation-play-state: paused;
 }
 
 .aboutDesignMark {
@@ -620,12 +622,6 @@ $white: #ffffff;
     background: linear-gradient(270deg, $black, rgba($black, 0));
   }
 
-  &:hover,
-  &:focus-within {
-    .pillarTrack {
-      animation-play-state: paused;
-    }
-  }
 }
 
 .pillarTrack {
@@ -635,7 +631,8 @@ $white: #ffffff;
   position: absolute;
   inset: 8px auto 14px calc(-1 * var(--pillar-fade-width));
   animation: hardSkillMarquee 34s linear infinite;
-  will-change: transform;
+  animation-play-state: paused;
+  will-change: auto;
 }
 
 .softSkillTrack {
@@ -743,18 +740,20 @@ $white: #ffffff;
   stroke-linecap: round;
   stroke-linejoin: round;
   transform: perspective(700px) rotateX(58deg) rotateZ(-12deg);
-  filter: drop-shadow(0 28px 34px rgba($white, 0.06));
+  filter: none;
   pointer-events: none;
 }
 
 .visualFloat {
   stroke-width: 8;
   animation: visualDrift 5.6s ease-in-out infinite;
+  animation-play-state: paused;
 }
 
 .visualCore {
   stroke-width: 6;
   animation: visualPulse 4.8s ease-in-out infinite;
+  animation-play-state: paused;
 }
 
 .pillarFront {
@@ -895,12 +894,6 @@ $white: #ffffff;
     background: linear-gradient(270deg, $black 0%, $black 22%, rgba($black, 0));
   }
 
-  &:hover,
-  &:focus-within {
-    .projectTrack {
-      animation-play-state: paused;
-    }
-  }
 }
 
 .projectTrack {
@@ -910,7 +903,8 @@ $white: #ffffff;
   position: absolute;
   inset: 8px auto 14px calc(-1 * var(--project-fade-width));
   animation: projectMarquee 36s linear infinite;
-  will-change: transform;
+  animation-play-state: paused;
+  will-change: auto;
 }
 
 @keyframes projectMarquee {
@@ -1260,12 +1254,6 @@ $white: #ffffff;
     background: linear-gradient(270deg, $paper 0%, $paper 22%, rgba($paper, 0));
   }
 
-  &:hover,
-  &:focus-within {
-    .toolTrack {
-      animation-play-state: paused;
-    }
-  }
 }
 
 .toolTrack {
@@ -1275,30 +1263,56 @@ $white: #ffffff;
   position: absolute;
   inset: 18px auto 18px calc(-1 * var(--tool-fade-width));
   animation: toolMarqueeLeft 34s linear infinite;
-  will-change: transform;
+  animation-play-state: paused;
+  will-change: auto;
 }
 
 .toolTrackReverse {
   animation-name: toolMarqueeRight;
 }
 
+.section[data-marquee-active="true"] .pillarTrack,
+.section[data-marquee-active="true"] .projectTrack,
+.section[data-marquee-active="true"] .toolTrack {
+  animation-play-state: running;
+  will-change: transform;
+}
+
+.section[data-animation-active="true"] .aboutCircleMark,
+.section[data-animation-active="true"] .aboutDesignMark,
+.section[data-animation-active="true"] .aboutCodeMark,
+.section[data-animation-active="true"] .aboutBusinessMark,
+.section[data-marquee-active="true"] .visualFloat,
+.section[data-marquee-active="true"] .visualCore {
+  animation-play-state: running;
+}
+
+.section[data-marquee-active="true"] .pillarGrid:hover .pillarTrack,
+.section[data-marquee-active="true"] .pillarGrid:focus-within .pillarTrack,
+.section[data-marquee-active="true"] .projectGrid:hover .projectTrack,
+.section[data-marquee-active="true"] .projectGrid:focus-within .projectTrack,
+.section[data-marquee-active="true"] .toolMarquee:hover .toolTrack,
+.section[data-marquee-active="true"] .toolMarquee:focus-within .toolTrack {
+  animation-play-state: paused;
+}
+
 @keyframes toolMarqueeLeft {
   from {
-    transform: translateX(100vw);
+    transform: translateX(0);
   }
 
   to {
-    transform: translateX(calc(-100% - var(--tool-fade-width)));
+    transform: translateX(calc(-50% - 8px));
   }
 }
 
 @keyframes toolMarqueeRight {
   from {
-    transform: translateX(calc(-100% - var(--tool-fade-width)));
+    transform: translateX(calc(-50% - 8px));
   }
 
   to {
-    transform: translateX(100vw);
+    transform: translateX(0);
   }
 }
 
@@ -1352,11 +1366,20 @@ $white: #ffffff;
 }
 
 @media (hover: none) {
+  .aboutCircleMark,
+  .aboutDesignMark,
+  .aboutCodeMark,
+  .aboutBusinessMark,
+  .visualFloat,
+  .visualCore {
+    animation: none;
+  }
+
   .toolLogoItem {
     opacity: 0.82;
 
     &::before {
-      filter: none;
+      filter: grayscale(1) contrast(1.05);
     }
   }
 }
@@ -1593,7 +1616,7 @@ $white: #ffffff;
     pointer-events: none;
     transform: translateY(-8px) scale(0.98);
     transition: opacity 180ms ease, transform 180ms ease;
-    backdrop-filter: blur(12px);
+    backdrop-filter: none;
     box-shadow: 0 24px 70px rgba($black, 0.2);
 
     a {

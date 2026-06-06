@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import About from "@/components/home/About";
 import Contact from "@/components/home/Contact";
 import Experience from "@/components/home/Experience";
@@ -11,14 +11,31 @@ import Tools from "@/components/home/Tools";
 import { content, languageOptions, Language, ThemeMode } from "./content";
 import styles from "./Home.module.scss";
 
+type ActiveSection =
+  | "home"
+  | "about"
+  | "skills"
+  | "experience"
+  | "projects"
+  | "tools"
+  | "contact";
+
 export default function HomeClient() {
   const [language, setLanguage] = useState<Language>("id");
   const [theme, setTheme] = useState<ThemeMode>("dark");
   const [isPreferencesOpen, setIsPreferencesOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<ActiveSection>("home");
   const copy = content[language];
+  const handleActiveSectionChange = useCallback((section: ActiveSection) => {
+    setActiveSection(section);
+  }, []);
 
   return (
-    <main className={styles.page} data-theme={theme}>
+    <main
+      className={styles.page}
+      data-theme={theme}
+      data-active-section={activeSection}
+    >
       <button
         type="button"
         className={styles.preferenceButton}
@@ -96,7 +113,11 @@ export default function HomeClient() {
         </div>
       ) : null}
 
-      <Navbar nav={copy.nav} />
+      <Navbar
+        nav={copy.nav}
+        activeSection={activeSection}
+        onActiveSectionChange={handleActiveSectionChange}
+      />
 
       <section id="home" className={styles.hero}>
         <div className={styles.heroGrid}>
@@ -128,11 +149,14 @@ export default function HomeClient() {
         </div>
       </section>
 
-      <About content={copy.about} />
-      <Skills content={copy.skills} />
+      <About content={copy.about} isActive={activeSection === "about"} />
+      <Skills content={copy.skills} isActive={activeSection === "skills"} />
       <Experience content={copy.experience} />
-      <Projects content={copy.projects} />
-      <Tools content={copy.tools} />
+      <Projects
+        content={copy.projects}
+        isActive={activeSection === "projects"}
+      />
+      <Tools content={copy.tools} isActive={activeSection === "tools"} />
       <Contact content={copy.contact} />
     </main>
   );

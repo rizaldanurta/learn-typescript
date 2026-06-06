@@ -1,6 +1,7 @@
 import styles from "./Home.module.scss";
 
 type SkillsProps = {
+  isActive: boolean;
   content: {
     eyebrow: string;
     title: string;
@@ -200,7 +201,7 @@ function SoftSkillIllustration({ title }: { title: string }) {
   );
 }
 
-export default function Skills({ content }: SkillsProps) {
+export default function Skills({ content, isActive }: SkillsProps) {
   const hardSkillLoop = [...content.hard, ...content.hard];
   const reversedSoftSkills = content.soft
     .map((skill, index) => ({ ...skill, number: index + 1 }))
@@ -208,7 +209,11 @@ export default function Skills({ content }: SkillsProps) {
   const softSkillLoop = [...reversedSoftSkills, ...reversedSoftSkills];
 
   return (
-    <section id="skills" className={`${styles.section} ${styles.sectionDark}`}>
+    <section
+      id="skills"
+      className={`${styles.section} ${styles.sectionDark}`}
+      data-marquee-active={isActive ? "true" : undefined}
+    >
       <div className={styles.container}>
         <p className={styles.eyebrow}>{content.eyebrow}</p>
         <h2>{content.title}</h2>
