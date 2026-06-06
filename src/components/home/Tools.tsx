@@ -20,25 +20,24 @@ const languageLogos = [
 ];
 
 const appLogos = [
-  { name: "Arduino", src: "/image/tools/apps/arduino-svgrepo-com.svg" },
-  { name: "Cloudflare", src: "/image/tools/apps/cloudflare-svgrepo-com.svg" },
-  { name: "Docker", src: "/image/tools/apps/docker-svgrepo-com.svg" },
+  { name: "Figma", src: "/image/tools/apps/figma-seeklogo.svg" },
+  { name: "Canva", src: "/image/tools/apps/canva-seeklogo.svg" },
+  { name: "CorelDRAW", src: "/image/tools/apps/coreldraw-x7-vector-logo-fix.svg" },
+  { name: "VS Code", src: "/image/tools/apps/vs-code-svgrepo-com.svg" },
+  { name: "Git", src: "/image/tools/apps/git-svgrepo-com.svg" },
   { name: "GitHub", src: "/image/tools/apps/github-142-svgrepo-com.svg" },
-  { name: "Grafana", src: "/image/tools/apps/grafana-svgrepo-com.svg" },
+  { name: "Docker", src: "/image/tools/apps/docker-svgrepo-com.svg" },
   { name: "Linux", src: "/image/tools/apps/linux-svgrepo-com.svg" },
   { name: "Nginx", src: "/image/tools/apps/nginx-svgrepo-com.svg" },
-  { name: "Postman", src: "/image/tools/apps/postman-icon-svgrepo-com.svg" },
-  { name: "Prometheus", src: "/image/tools/apps/prometheus-svgrepo-com.svg" },
+  { name: "Cloudflare", src: "/image/tools/apps/cloudflare-svgrepo-com.svg" },
   { name: "Vercel", src: "/image/tools/apps/vercel-svgrepo-com.svg" },
-  { name: "VS Code", src: "/image/tools/apps/vs-code-svgrepo-com.svg" },
+  { name: "Postman", src: "/image/tools/apps/postman-icon-svgrepo-com.svg" },
+  { name: "Grafana", src: "/image/tools/apps/grafana-svgrepo-com.svg" },
+  { name: "Prometheus", src: "/image/tools/apps/prometheus-svgrepo-com.svg" },
+  { name: "Arduino", src: "/image/tools/apps/arduino-svgrepo-com.svg" },
 ];
 
-const repeatLogos = <T,>(items: readonly T[]) => [
-  ...items,
-  ...items,
-  ...items,
-  ...items,
-];
+const repeatLogos = <T,>(items: readonly T[]) => [...items];
 
 type ToolsProps = {
   content: {

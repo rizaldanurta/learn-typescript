@@ -83,7 +83,7 @@ $white: #ffffff;
   position: relative;
   z-index: 1;
   pointer-events: auto;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 18px 54px rgba($black, 0.18);
 
   a {
@@ -436,6 +436,8 @@ $white: #ffffff;
 
 .section {
   padding: clamp(72px, 10vw, 126px) 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 720px;
   overflow-x: clip;
   scroll-margin-top: 96px;
 
@@ -1282,21 +1284,21 @@ $white: #ffffff;
 
 @keyframes toolMarqueeLeft {
   from {
-    transform: translateX(0);
+    transform: translateX(100vw);
   }
 
   to {
-    transform: translateX(calc(-50% - 8px));
+    transform: translateX(calc(-100% - var(--tool-fade-width)));
   }
 }
 
 @keyframes toolMarqueeRight {
   from {
-    transform: translateX(calc(-50% - 8px));
+    transform: translateX(calc(-100% - var(--tool-fade-width)));
   }
 
   to {
-    transform: translateX(0);
+    transform: translateX(100vw);
   }
 }
 
@@ -1345,6 +1347,16 @@ $white: #ffffff;
 
     &::before {
       filter: grayscale(0) contrast(1);
+    }
+  }
+}
+
+@media (hover: none) {
+  .toolLogoItem {
+    opacity: 0.82;
+
+    &::before {
+      filter: none;
     }
   }
 }
@@ -1400,18 +1412,6 @@ $white: #ffffff;
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-}
-
-.section,
-.pillarCard,
-.softSkillItem,
-.timelineItem,
-.projectCard,
-.toolItem,
-.contactPanel {
-  animation: revealUp both;
-  animation-timeline: view();
-  animation-range: entry 8% cover 28%;
 }
 
 .page[data-theme="dark"] {
@@ -1593,7 +1593,7 @@ $white: #ffffff;
     pointer-events: none;
     transform: translateY(-8px) scale(0.98);
     transition: opacity 180ms ease, transform 180ms ease;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
     box-shadow: 0 24px 70px rgba($black, 0.2);
 
     a {
