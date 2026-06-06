@@ -4,6 +4,7 @@ import { useState } from "react";
 import About from "@/components/home/About";
 import Contact from "@/components/home/Contact";
 import Experience from "@/components/home/Experience";
+import Navbar from "@/components/home/Navbar";
 import Projects from "@/components/home/Projects";
 import Skills from "@/components/home/Skills";
 import Tools from "@/components/home/Tools";
@@ -95,21 +96,9 @@ export default function HomeClient() {
         </div>
       ) : null}
 
-      <section id="home" className={styles.hero}>
-        <nav className={styles.navbar}>
-          <a href="#home" className={styles.logo}>
-            {copy.nav.brand}
-          </a>
-          <div className={styles.navLinks}>
-            <a href="#about">{copy.nav.about}</a>
-            <a href="#skills">{copy.nav.skills}</a>
-            <a href="#experience">{copy.nav.experience}</a>
-            <a href="#projects">{copy.nav.projects}</a>
-            <a href="#tools">{copy.nav.tools}</a>
-            <a href="#contact">{copy.nav.contact}</a>
-          </div>
-        </nav>
+      <Navbar nav={copy.nav} />
 
+      <section id="home" className={styles.hero}>
         <div className={styles.heroGrid}>
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>

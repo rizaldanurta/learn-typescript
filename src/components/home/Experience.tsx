@@ -8,8 +8,8 @@ type ExperienceProps = {
     items: readonly {
       period: string;
       role: string;
-      place: string;
       description: string;
+      details?: readonly string[];
     }[];
   };
 };
@@ -35,8 +35,14 @@ export default function Experience({ content }: ExperienceProps) {
               <span>{item.period}</span>
               <div>
                 <h3>{item.role}</h3>
-                <p className={styles.timelinePlace}>{item.place}</p>
                 <p>{item.description}</p>
+                {item.details ? (
+                  <ul className={styles.timelineDetails}>
+                    {item.details.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </article>
           ))}

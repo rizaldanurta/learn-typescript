@@ -26,9 +26,9 @@ export const content = {
       light: "Terang",
     },
     hero: {
-      eyebrow: "Frontend Developer",
-      title: "Siapa itu Rizal Danuarta Akbar?",
-      lead: "Saya membuat antarmuka modern dengan Next.js, TypeScript, dan detail visual yang terasa personal tanpa kehilangan kerapian.",
+      eyebrow: "Softwere Engineer | Product Builder | Founder Nusticky",
+      title: "Hallo, Saya Rizal Danuarta Akbar",
+      lead: "Software Engineer yang menggabungkan desain, bisnis, dan teknologi untuk mengubah ide menjadi produk digital yang siap digunakan.",
       primary: "Lihat Projects",
       secondary: "Hubungi Saya",
       photo: "Foto Profil",
@@ -116,60 +116,121 @@ export const content = {
       eyebrow: "Experience",
       title: "Pengalaman Kerja & Proses Berkembang",
       summary:
-        "Ringkasan pengalaman yang menggabungkan sisi bisnis, teknis, dan visual.",
+        "Ringkasan pengalaman dan apa yang saya buat dengan menggabungkan sisi bisnis, teknis, produk, dan pengembangan sistem.",
       items: [
         {
-          period: "Sekarang",
-          role: "Sticker Seller",
-          place: "Personal Brand",
+          period: "Nov 2023 - Present",
+          role: "Founder Nusticky",
           description:
-            "Mengelola ide produk sticker, memilih desain yang punya daya tarik, melayani pembeli, dan memahami pola minat pasar.",
+            "Nusticky adalah bisnis e-commerce character sticker yang berfokus pada produk visual kreatif dan penjualan berbasis marketplace.",
+          details: [
+            "Mengoperasikan bisnis character sticker melalui marketplace Shopee dengan mengelola proses penjualan, produksi, dan distribusi dari awal hingga akhir.",
+            "Mendesain produk sticker dan menjalankan strategi marketing, termasuk riset tren, pengembangan branding, dan optimasi harga.",
+            "Mengelola catatan keuangan, kontrol inventaris, dan engagement pelanggan untuk menjaga pertumbuhan penjualan serta keberlanjutan bisnis.",
+          ],
         },
         {
-          period: "Belajar & Project",
-          role: "Frontend Developer",
-          place: "Personal Project",
+          period: "Apr 2026 - Mei 2026",
+          role: "DiProperti",
           description:
-            "Membangun website dengan Next.js, TypeScript, Sass, dan struktur komponen yang mudah dikembangkan.",
+            "DiProperti adalah platform marketplace properti untuk membantu pengguna menemukan dan mengevaluasi pilihan properti secara lebih terarah.",
+          details: [
+            "Membangun antarmuka web responsif, layanan backend, dan sistem database untuk mendukung manajemen properti serta interaksi pengguna.",
+            "Menerapkan authentication, fitur rekomendasi, dan dashboard administratif untuk meningkatkan usability dan efisiensi platform.",
+            "Mengelola deployment dan infrastruktur sistem dengan praktik pengembangan modern serta DevOps untuk menjaga performa aplikasi tetap stabil.",
+          ],
         },
         {
-          period: "Dasar Kreatif",
-          role: "Basic Designer",
-          place: "Visual Exploration",
+          period: "Oct 2025 - Dec 2025",
+          role: "Semboro Orange Quality Classification System",
           description:
-            "Membuat layout sederhana, menyusun komposisi, dan menjaga visual agar tetap rapi, jelas, dan punya karakter.",
+            "Sistem ini adalah platform klasifikasi kualitas jeruk berdasarkan grade yang menggabungkan AI, IoT, dan monitoring untuk mendukung proses sortir.",
+          details: [
+            "Mengembangkan model computer vision berbasis CNN VGG16 untuk klasifikasi kualitas jeruk berdasarkan grade A, B, dan reject secara otomatis.",
+            "Mengintegrasikan komponen IoT seperti ESP8266, Load Cell, dan protokol MQTT untuk pemrosesan data real-time serta otomatisasi sortir.",
+            "Membangun dashboard monitoring berbasis web untuk menampilkan hasil klasifikasi dan metrik performa sistem.",
+          ],
+        },
+        {
+          period: "Jul 2025",
+          role: "Edelweiss Tour & Travel Adventure",
+          description:
+            "Edelweiss Tour & Travel Adventure adalah website layanan perjalanan yang menampilkan paket wisata, informasi bisnis, dan akses booking cepat.",
+          details: [
+            "Mengembangkan website company profile untuk menampilkan paket tour, layanan, dan informasi bisnis.",
+            "Menerapkan desain web responsif dengan integrasi booking WhatsApp langsung untuk kebutuhan customer inquiries.",
+            "Menyusun sistem manajemen konten dan mengoptimalkan performa agar lebih mudah diakses di berbagai perangkat.",
+          ],
+        },
+        {
+          period: "Apr 2025 - Jun 2025",
+          role: "Cuan Space",
+          description:
+            "Cuan Space adalah marketplace produk digital berbasis web dan mobile yang dirancang untuk transaksi serta distribusi file digital.",
+          details: [
+            "Memimpin project sebagai Project Leader dengan mengawasi perencanaan, pengembangan fitur, dan koordinasi tim.",
+            "Mengembangkan marketplace web dan mobile berbasis Laravel serta Flutter dengan terintegrasi payment gateway dan pengiriman file digital yang aman.",
+            "Menerapkan arsitektur database yang scalable dengan multi-role authentication dan system management.",
+          ],
         },
       ],
     },
     projects: {
       eyebrow: "Projects",
-      title: "Karya Pilihan",
+      title: "Membangun Ide Menjadi Produk",
       summary:
-        "Beberapa contoh project yang bisa kamu sesuaikan dengan portofolio asli.",
+        "Perjalanan saya dalam mengubah ide menjadi produk digital melalui perpaduan strategi bisnis, desain yang berorientasi pengguna, dan pengembangan perangkat lunak yang berkelanjutan.",
+      linkLabel: "Selengkapnya",
       items: [
         {
-          title: "Dashboard Belajar",
-          description: "Aplikasi ringkas untuk memantau progres materi TypeScript.",
+          title: "DiProperti",
+          description:
+            "Platform marketplace properti untuk membantu pengguna menemukan, membandingkan, dan mengevaluasi properti sesuai preferensi mereka.",
+          image: "/image/projects/diproperti.png",
         },
         {
-          title: "Landing Page UMKM",
-          description: "Halaman promosi responsif untuk produk lokal dan kontak cepat.",
+          title: "Semboro Orange Quality Classification System",
+          description:
+            "Platform sortir kualitas jeruk berbasis AI dan IoT dengan dashboard monitoring untuk melihat hasil klasifikasi dan performa sistem.",
+          image: "/image/projects/semboro.jpg",
+        },
+        {
+          title: "Edelweiss Tour & Travel Adventure",
+          description:
+            "Website company profile layanan tour & travel dengan tampilan responsif dan integrasi booking WhatsApp.",
+            image: "/image/projects/edelweiss.png",
+        },
+        {
+          title: "Cuan Space",
+          description:
+            "Marketplace produk digital berbasis web dan mobile dengan payment gateway, pengiriman file digital, dan multi-role authentication.",
+            image: "/image/projects/cuan.png",
+        },
+        {
+          title: "Nusticky on Shopee",
+          description:
+            "Toko e-commerce character sticker di Shopee yang menggabungkan desain produk, strategi penjualan, branding, dan pengelolaan operasional bisnis.",
+            image: "/image/projects/nusticky.png",
         },
         {
           title: "Portfolio Website",
           description:
-            "Website personal dengan section About, Skills, Projects, dan Contact.",
+            "Website portfolio personal dengan section About, Skills, Experience, Projects, Tools, dan Contact yang responsif serta interaktif.",
         },
       ],
     },
     tools: {
       eyebrow: "Tools",
-      title: "Tools, Bahasa, dan Aplikasi",
+      title: "Apa yang Ada di Meja Saya?",
       summary:
-        "Peralatan yang saya gunakan untuk membuat website, desain sederhana, dan mengelola proses kerja.",
+        "Mulai dari desain, pengembangan, hingga deployment, inilah tools yang paling sering saya gunakan untuk membangun produk digital.",
+      laneTitles: {
+        primary: "Bahasa & Framework",
+        secondary: "Aplikasi & Tools",
+      },
       groups: [
         { title: "Bahasa", items: ["HTML", "CSS", "JavaScript", "TypeScript"] },
-        { title: "Tools", items: ["Next.js", "React", "Sass", "Git", "GitHub"] },
+        { title: "Framework", items: ["Next.js", "React", "Sass", "Git", "GitHub"] },
         {
           title: "Aplikasi",
           items: ["Visual Studio Code", "Figma", "Canva", "Chrome DevTools"],
@@ -291,48 +352,102 @@ export const content = {
       eyebrow: "Experience",
       title: "Work Experience & Growth Process",
       summary:
-        "A short overview combining business, technical, and visual experience.",
+        "A short overview combining business, technical, product, and system development experience.",
       items: [
         {
-          period: "Now",
-          role: "Sticker Seller",
-          place: "Personal Brand",
+          period: "Nov 2023 - Present",
+          role: "E-commerce Business Owner",
           description:
-            "Managing sticker product ideas, choosing appealing designs, serving customers, and understanding market interest.",
+            "Nusticky is a character sticker e-commerce business focused on creative visual products and marketplace-based sales.",
+          details: [
+            "Operated a character sticker business through Shopee marketplace, managing end-to-end sales, production, and distribution processes.",
+            "Designed sticker products and executed marketing strategies, including trend research, branding development, and pricing optimization.",
+            "Managed financial records, inventory control, and customer engagement, ensuring consistent sales growth and business sustainability.",
+          ],
         },
         {
-          period: "Learning & Projects",
-          role: "Frontend Developer",
-          place: "Personal Project",
+          period: "Apr 2026 - May 2026",
+          role: "DiProperti",
           description:
-            "Building websites with Next.js, TypeScript, Sass, and maintainable component structure.",
+            "DiProperti is a property marketplace platform designed to help users discover and evaluate property options more intentionally.",
+          details: [
+            "Built responsive web interfaces, backend services, and database systems to support property management and user interactions.",
+            "Implemented authentication, recommendation features, and administrative dashboards to improve platform usability and efficiency.",
+            "Managed deployment and system infrastructure using modern development and DevOps practices to ensure stable application performance.",
+          ],
         },
         {
-          period: "Creative Basics",
-          role: "Basic Designer",
-          place: "Visual Exploration",
+          period: "Oct 2025 - Dec 2025",
+          role: "Semboro Orange Quality Classification System",
           description:
-            "Creating simple layouts, arranging composition, and keeping visuals clear and characterful.",
+            "This system is an orange quality classification platform that combines AI, IoT, and monitoring to support sorting workflows.",
+          details: [
+            "Developed a CNN VGG16-based computer vision model for automated orange quality classification.",
+            "Integrated IoT components including ESP8266, Load Cell, and MQTT protocol for real-time data processing and sorting automation.",
+            "Built a web-based monitoring dashboard to display classification results and system performance metrics.",
+          ],
+        },
+        {
+          period: "Jul 2025",
+          role: "Edelweiss Tour & Travel Adventure",
+          description:
+            "Edelweiss Tour & Travel Adventure is a travel service website for presenting tour packages, business information, and quick booking access.",
+          details: [
+            "Developed a company profile website to showcase tour packages, services, and business information.",
+            "Implemented responsive web design with direct WhatsApp booking integration for customer inquiries.",
+            "Structured content management system and optimized performance for better accessibility across devices.",
+          ],
+        },
+        {
+          period: "Apr 2025 - Jun 2025",
+          role: "Cuan Space",
+          description:
+            "Cuan Space is a web and mobile digital product marketplace designed for transactions and secure digital file distribution.",
+          details: [
+            "Led the project as Project Leader, overseeing planning, feature development, and team coordination.",
+            "Developed a Laravel and Flutter-based web and mobile marketplace with payment gateway integration and secure digital file delivery.",
+            "Implemented scalable database architecture with multi-role authentication and system management.",
+          ],
         },
       ],
     },
     projects: {
       eyebrow: "Projects",
       title: "Selected Work",
-      summary: "A few project examples that can be adjusted to your real portfolio.",
+      summary:
+        "Selected projects combining web development, mobile products, systems, and product experience.",
+      linkLabel: "View more",
       items: [
         {
-          title: "Learning Dashboard",
-          description: "A compact app to track TypeScript learning progress.",
+          title: "DiProperti",
+          description:
+            "A property marketplace platform that helps users discover, compare, and evaluate properties based on their preferences.",
+          image: "/image/projects/diproperti.png",
         },
         {
-          title: "Small Business Landing Page",
-          description: "A responsive promo page for local products and quick contact.",
+          title: "Semboro Orange Quality Classification System",
+          description:
+            "An AI and IoT-based orange quality sorting platform with a monitoring dashboard for classification results and system metrics.",
+        },
+        {
+          title: "Edelweiss Tour & Travel Adventure",
+          description:
+            "A responsive company profile website for tour and travel services with direct WhatsApp booking integration.",
+        },
+        {
+          title: "Cuan Space",
+          description:
+            "A web and mobile digital product marketplace with payment gateway, secure file delivery, and multi-role authentication.",
+        },
+        {
+          title: "Nusticky on Shopee",
+          description:
+            "A character sticker e-commerce store on Shopee combining product design, sales strategy, branding, and business operations management.",
         },
         {
           title: "Portfolio Website",
           description:
-            "A personal website with About, Skills, Projects, and Contact sections.",
+            "A responsive and interactive personal portfolio website with About, Skills, Experience, Projects, Tools, and Contact sections.",
         },
       ],
     },
@@ -341,9 +456,13 @@ export const content = {
       title: "Tools, Languages, and Apps",
       summary:
         "The set of tools I use to build websites, create simple designs, and manage workflow.",
+      laneTitles: {
+        primary: "Languages & Frameworks",
+        secondary: "Apps & Tools",
+      },
       groups: [
         { title: "Languages", items: ["HTML", "CSS", "JavaScript", "TypeScript"] },
-        { title: "Tools", items: ["Next.js", "React", "Sass", "Git", "GitHub"] },
+        { title: "Frameworks", items: ["Next.js", "React", "Sass", "Git", "GitHub"] },
         {
           title: "Apps",
           items: ["Visual Studio Code", "Figma", "Canva", "Chrome DevTools"],
@@ -457,47 +576,98 @@ export const content = {
     experience: {
       eyebrow: "经验",
       title: "工作经验与成长过程",
-      summary: "结合商业、技术与视觉经验的简短总结。",
+      summary: "结合商业、技术、产品与系统开发经验的简短总结。",
       items: [
         {
-          period: "现在",
-          role: "贴纸销售者",
-          place: "个人品牌",
+          period: "2023年11月 - 至今",
+          role: "E-commerce Business Owner",
           description:
-            "管理贴纸产品想法，选择有吸引力的设计，服务买家，并理解市场兴趣。",
+            "Nusticky 是一个 character sticker 电商业务，专注于创意视觉产品和 marketplace 销售。",
+          details: [
+            "通过 Shopee marketplace 运营 character sticker 业务，管理端到端销售、生产和配送流程。",
+            "设计贴纸产品并执行营销策略，包括趋势研究、品牌发展和定价优化。",
+            "管理财务记录、库存控制和客户互动，确保销售增长和业务可持续性。",
+          ],
         },
         {
-          period: "学习与项目",
-          role: "前端开发者",
-          place: "个人项目",
+          period: "2026年4月 - 2026年5月",
+          role: "DiProperti",
           description:
-            "使用 Next.js、TypeScript、Sass 和可维护的组件结构构建网站。",
+            "DiProperti 是一个 property marketplace platform，帮助用户更有方向地发现和评估房产选择。",
+          details: [
+            "构建 responsive web interfaces、backend services 和 database systems，用于支持房产管理与用户交互。",
+            "实现 authentication、recommendation features 和 administrative dashboards，以提升平台可用性和效率。",
+            "使用现代 development 与 DevOps 实践管理 deployment 和 system infrastructure，确保应用性能稳定。",
+          ],
         },
         {
-          period: "创意基础",
-          role: "基础设计者",
-          place: "视觉探索",
+          period: "2025年10月 - 2025年12月",
+          role: "Semboro Orange Quality Classification System",
           description:
-            "制作简单布局，安排构图，并保持视觉清晰且有个性。",
+            "该系统是一个橙子质量分类平台，结合 AI、IoT 和 monitoring 来支持分拣流程。",
+          details: [
+            "开发基于 CNN VGG16 的 computer vision 模型，用于自动化橙子质量分类。",
+            "集成 ESP8266、Load Cell 和 MQTT protocol 等 IoT components，实现实时数据处理和分拣自动化。",
+            "构建 web-based monitoring dashboard，用于展示分类结果和系统性能指标。",
+          ],
+        },
+        {
+          period: "2025年7月",
+          role: "Edelweiss Tour & Travel Adventure",
+          description:
+            "Edelweiss Tour & Travel Adventure 是一个旅行服务网站，用于展示旅游套餐、业务信息和快速预订入口。",
+          details: [
+            "开发 company profile website，用于展示 tour packages、services 和 business information。",
+            "实现 responsive web design，并集成 direct WhatsApp booking 以支持 customer inquiries。",
+            "构建 content management system，并优化跨设备访问性能。",
+          ],
+        },
+        {
+          period: "2025年4月 - 2025年6月",
+          role: "Cuan Space",
+          description:
+            "Cuan Space 是一个 web 和 mobile digital product marketplace，面向交易和安全的数字文件分发。",
+          details: [
+            "担任 Project Leader，负责规划、功能开发和团队协调。",
+            "开发基于 Laravel 和 Flutter 的 web/mobile marketplace，集成 payment gateway 和 secure digital file delivery。",
+            "实现 scalable database architecture，并支持 multi-role authentication 和 system management。",
+          ],
         },
       ],
     },
     projects: {
       eyebrow: "项目",
       title: "精选作品",
-      summary: "一些可以根据真实作品集调整的项目示例。",
+      summary: "结合网页开发、移动产品、系统开发和产品体验的精选项目。",
+      linkLabel: "查看更多",
       items: [
         {
-          title: "学习仪表盘",
-          description: "用于跟踪 TypeScript 学习进度的简洁应用。",
+          title: "DiProperti",
+          description: "一个 property marketplace platform，帮助用户根据偏好发现、比较和评估房产。",
+          image: "/image/projects/diproperti.png",
         },
         {
-          title: "小型商业落地页",
-          description: "用于本地产品推广和快速联系的响应式页面。",
+          title: "Semboro Orange Quality Classification System",
+          description:
+            "基于 AI 和 IoT 的橙子质量分拣平台，包含用于展示分类结果和系统指标的 monitoring dashboard。",
         },
         {
-          title: "作品集网站",
-          description: "包含关于、技能、项目和联系模块的个人网站。",
+          title: "Edelweiss Tour & Travel Adventure",
+          description: "一个 tour & travel 服务的响应式 company profile website，并集成 WhatsApp booking。",
+        },
+        {
+          title: "Cuan Space",
+          description:
+            "一个 web 和 mobile digital product marketplace，支持 payment gateway、安全文件分发和 multi-role authentication。",
+        },
+        {
+          title: "Nusticky on Shopee",
+          description:
+            "Shopee 上的 character sticker 电商店铺，结合产品设计、销售策略、品牌建设和业务运营管理。",
+        },
+        {
+          title: "Portfolio Website",
+          description: "一个响应式、交互式个人作品集网站，包含 About、Skills、Experience、Projects、Tools 和 Contact 模块。",
         },
       ],
     },
@@ -505,9 +675,13 @@ export const content = {
       eyebrow: "工具",
       title: "工具、语言和应用",
       summary: "我用于构建网站、制作简单设计和管理工作流程的工具。",
+      laneTitles: {
+        primary: "语言与框架",
+        secondary: "应用与工具",
+      },
       groups: [
         { title: "语言", items: ["HTML", "CSS", "JavaScript", "TypeScript"] },
-        { title: "工具", items: ["Next.js", "React", "Sass", "Git", "GitHub"] },
+        { title: "框架", items: ["Next.js", "React", "Sass", "Git", "GitHub"] },
         {
           title: "应用",
           items: ["Visual Studio Code", "Figma", "Canva", "Chrome DevTools"],
